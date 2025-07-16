@@ -1,6 +1,8 @@
 # SenseVox ASR Flutter Server App
 
-一个基于 [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) [SenseVoice](https://github.com/FunAudioLLM/SenseVoice) 的本地语音识别 Flutter 服务端应用，支持中/英/日/韩/粤多语言识别。
+一个基于 [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) [SenseVoice](https://github.com/FunAudioLLM/SenseVoice) 的本地语音识别 Flutter 服务端应用。
+
+<img src="./image.jpg" alt="项目示意图" width="200" />
 
 ## 🧠 项目简介
 
