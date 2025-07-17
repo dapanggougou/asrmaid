@@ -1,4 +1,4 @@
-# SenseVox ASR Flutter Server App
+# ASR Maid
 
 一个基于 [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) [SenseVoice](https://github.com/FunAudioLLM/SenseVoice) 的本地语音识别 Flutter 服务端应用。
 
@@ -64,7 +64,7 @@
 
 ## 📲 配套安卓语音输入法（可选）
 
-- 
+- [voxime-sensevox](https://github.com/dapanggougou/voxime)
 - 长按录音、松开识别
 
 ---
