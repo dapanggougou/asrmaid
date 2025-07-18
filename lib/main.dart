@@ -45,7 +45,20 @@ class ASRServerApp extends StatelessWidget {
       create: (_) => ServerController(),
       child: MaterialApp(
         title: 'ASR HTTP Server',
-        theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.indigo),
+        // 亮色主题
+        theme: ThemeData(
+          useMaterial3: true,
+          colorSchemeSeed: Colors.indigo,
+          brightness: Brightness.light,
+        ),
+        // 暗色主题
+        darkTheme: ThemeData(
+          useMaterial3: true,
+          colorSchemeSeed: Colors.indigo,
+          brightness: Brightness.dark,
+        ),
+        // 跟随系统主题
+        themeMode: ThemeMode.system,
         home: const HomePage(),
         debugShowCheckedModeBanner: false,
       ),
@@ -119,7 +132,7 @@ class _HomePageState extends State<HomePage> {
     final controller = context.watch<ServerController>();
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Sherpa-ONNX HTTP ASR 服务')),
+      appBar: AppBar(title: const Text('ASR Maid')),
       body: Padding(
         padding: const EdgeInsets.all(12),
         child: Column(
@@ -131,7 +144,9 @@ class _HomePageState extends State<HomePage> {
                   child: Text(
                     modelDir ?? '未选择模型目录',
                     style: TextStyle(
-                      color: modelDir == null ? Colors.red : Colors.black87,
+                      color: modelDir == null
+                          ? Theme.of(context).colorScheme.error
+                          : Theme.of(context).colorScheme.onSurface,
                     ),
                   ),
                 ),
@@ -235,7 +250,11 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black26),
+                  border: Border.all(
+                    color: Theme.of(
+                      context,
+                    ).colorScheme.outline.withOpacity(0.3),
+                  ),
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: ListView.builder(
